@@ -7,12 +7,12 @@ import { NotificationsModule } from './notifications/notifications.module';
 @Module({
   imports: [TypeOrmModule.forRoot({
     type: 'postgres',
-    host: 'localhots',
+    host: 'localhost',
     port: 5432,
     username: 'postgres',
     password: '78110',
     database: 'notification_db',
-    entities: [__dirname + '/**/*.entity{.ts,.js}'],
+    entities: [__dirname + `/**/*.entity{.ts,.js}`],
     synchronize: true,
   }), NotificationsModule],
   controllers: [AppController],

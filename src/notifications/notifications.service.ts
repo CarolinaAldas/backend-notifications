@@ -5,7 +5,7 @@ import { Notification } from './notification.entity';
 import { NotificationContext } from './notification-context';
 import { EmailNotification } from './email-notification.strategy';
 import { SMSNotification } from './sms-notification.strategy';
-import { PushNotificaton } from './push-notification';
+import { PushNotificaton } from './push-notification.strategy.';
 
 @Injectable()
 export class NotificationsService {
