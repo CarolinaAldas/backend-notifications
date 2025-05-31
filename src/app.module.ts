@@ -3,15 +3,19 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { NotificationsModule } from './notifications/notifications.module';
+import { ConfigModule } from '@nestjs/config';
+
+
 
 @Module({
-  imports: [TypeOrmModule.forRoot({
+  imports: [    ConfigModule.forRoot({ isGlobal: true }),
+TypeOrmModule.forRoot({
     type: 'postgres',
-    host: '127.0.0.1',
+    url: process.env.DATABASE_URL,
     port: 5432,
     username: 'postgres',
-    password: '78110',
-    database: 'notification_db',
+    password: 'UncArnNeYNmUUZyTbrtimpwiqOraxTyD',
+    database: 'railway',
     entities: [__dirname + `/**/*.entity{.ts,.js}`],
     synchronize: true,
   }), NotificationsModule],
